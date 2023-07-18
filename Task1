@@ -1,0 +1,27 @@
+close all;
+clear all;
+clc;
+X=imread('pout.tif');
+imshow(X);
+title('Original image');
+[x,y,z] = size(X);
+for c=1:z
+    for i=1:x
+        for j=1:y
+        flipt(i,j,c)=X(x-i+1,j,c);
+        end
+    end
+end
+figure, imshow(flipt);
+title('flipped image');
+
+other solution:
+close all;
+clear all;
+clc;
+X=imread('pout.tif');
+imshow(X);
+title('Original image');
+a=flipdim(X,1);
+figure, imshow(a);
+title('flipped image');
